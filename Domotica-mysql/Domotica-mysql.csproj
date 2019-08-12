@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <UserSecretsId>aspnet-Domotica_mysql-D32394D6-51D3-40E4-9C02-77DF929B5E10</UserSecretsId>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <RootNamespace>Domotica_mysql</RootNamespace>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\00000000000000_CreateIdentitySchema.cs" />
+    <Compile Remove="Data\Migrations\00000000000000_CreateIdentitySchema.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190325120008_[M1].cs" />
+    <Compile Remove="Data\Migrations\20190325120008_[M1].Designer.cs" />
+    <Compile Remove="Data\Migrations\20190327105958_M1.cs" />
+    <Compile Remove="Data\Migrations\20190327105958_M1.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190327111125_[M1].cs" />
+    <Compile Remove="Data\Migrations\20190327111125_[M1].Designer.cs" />
+    <Compile Remove="Data\Migrations\20190327124123_[M1].cs" />
+    <Compile Remove="Data\Migrations\20190327124123_[M1].Designer.cs" />
+    <Compile Remove="Migrations\20190405095014_[M2].cs" />
+    <Compile Remove="Migrations\20190405095014_[M2].Designer.cs" />
+    <Compile Remove="Migrations\20190531112414_M5.cs" />
+    <Compile Remove="Migrations\20190531112414_M5.Designer.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.2105168" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.16" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Areas\Usuarios\Data\" />
+    <Folder Include="Areas\Usuarios\Pages\Editar\" />
+    <Folder Include="Data\Migrations\" />
+    <Folder Include="wwwroot\images\fotos\Usuarios\" />
+  </ItemGroup>
+
+</Project>
