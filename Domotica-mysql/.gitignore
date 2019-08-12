@@ -1,1 +1,2 @@
-﻿
+﻿# ignore file named '.appsetting.json' 
+.appsettings.json
