@@ -24,21 +24,21 @@ namespace Domotica_mysql.Areas.Identity.Pages.Account
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
-        private ApplicationDbContext _context;
-        private LUsuarios _LUsuarios;
+        //private ApplicationDbContext _context;
+        //private LUsuarios _LUsuarios;
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
-            ApplicationDbContext _context,
-            LUsuarios LUsuarios)
+            ApplicationDbContext _context)
+            //LUsuarios LUsuarios)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
-            _LUsuarios = LUsuarios;
+            //_LUsuarios = LUsuarios;
         }
 
         [BindProperty]
@@ -64,16 +64,7 @@ namespace Domotica_mysql.Areas.Identity.Pages.Account
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
             //campos con los que trabajaremos en el registro
-            [Required]
-            [Display(Name ="DNI")]
-            public string DNI { get; set; }
-
-            [Required]
-            [Display(Name ="Nombre")]
-            public string Nombre { get; set; }
-            [Required]
-            [Display(Name ="Apellido")]
-            public string Apellido { get; set; }
+          
         }
 
         public void OnGet(string returnUrl = null)
@@ -105,11 +96,7 @@ namespace Domotica_mysql.Areas.Identity.Pages.Account
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     //accedemos a la tabla de usuarios
-                    int userid = user.Id;
-                    //aqui me da con la ID de la otra tabla AspnetUsers el usuario que tengo que registrar
-                    var usuario = await _LUsuarios.CreateUserAsync(userid, Input.Nombre, Input.Apellido, Input.DNI);
-                    
-                    return LocalRedirect(returnUrl);
+                 
                 }
                 foreach (var error in result.Errors)
                 {

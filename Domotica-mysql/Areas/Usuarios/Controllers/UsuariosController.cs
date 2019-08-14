@@ -32,6 +32,7 @@ namespace Domotica_mysql.Areas.Usuarios.Controllers
         {
             if (objeto._signInManager.IsSignedIn(User))
             {
+                
                 var url = Request.Scheme + "://" + Request.Host.Value;
                 //esta forma de realizar digamos la búsqueda no me ha convencido nada
                 var objects = new Paginador<InputModelRegistrar>().paginador(await objeto._usuarios.GetUsuariosAsync(Search),
@@ -45,7 +46,7 @@ namespace Domotica_mysql.Areas.Usuarios.Controllers
                     Input = new InputModelRegistrar()
 
                 };
-         
+                   
                 return View(models);
             }
             return View();
